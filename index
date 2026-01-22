@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goal Zone - Blog Pecinta Sepak Bola</title>
+  <meta name="description" content="Website blog sepak bola berisi sejarah, tips & trik, peralatan, turnamen, dan galeri komunitas pecinta sepak bola.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Open Sans', sans-serif; background-color: #f0f8ff; color: #1f2937; }
+    h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    .blue-gradient {
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-section {
+      background-image: url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #1e40af;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -13px;
+      background-color: white;
+      border: 4px solid #1e40af;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .left {
+      left: 0;
+    }
+    .right {
+      left: 50%;
+    }
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+    .right::after {
+      left: -13px;
+    }
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    @media screen and (max-width: 768px) {
+      .timeline::after {
+        left: 31px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-item::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+      .left::after, .right::after {
+        left: 18px;
+      }
+      .right {
+        left: 0%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-white shadow-md fixed w-full top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <i class="fas fa-futbol text-3xl blue-gradient"></i>
+        <h1 class="text-2xl font-bold blue-gradient">Goal Zone</h1>
+      </div>
+      <div class="space-x-6 hidden md:flex">
+        <a href="#beranda" class="hover:text-blue-600">Beranda</a>
+        <a href="#profil" class="hover:text-blue-600">Profil</a>
+        <a href="#tips" class="hover:text-blue-600">Tips & Trik</a>
+        <a href="#peralatan" class="hover:text-blue-600">Peralatan</a>
+        <a href="#berita" class="hover:text-blue-600">Berita</a>
+        <a href="#sejarah" class="hover:text-blue-600">Sejarah</a>
+        <a href="#kontak" class="hover:text-blue-600">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="beranda" class="min-h-screen flex items-center justify-center text-center hero-section text-white px-4">
+    <div class="hero-content">
+      <h2 class="text-5xl md:text-6xl font-bold mb-6">Selamat Datang di Goal Zone</h2>
+      <p class="text-lg mb-8 opacity-90">Blog inspiratif untuk pecinta dan pemain sepak bola di seluruh Indonesia.</p>
+      <a href="#tips" class="px-8 py-4 bg-white text-blue-700 font-semibold rounded-full hover:bg-blue-200 transition">Mulai Belajar</a>
+    </div>
+  </section>
+
+  <section id="profil" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold blue-gradient mb-10 text-center">Profil</h2>
+      <p class="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+        Goal Zone adalah blog yang dibuat untuk para penggemar sepak bola. Kami menyediakan artikel,
+        tips bermain, informasi peralatan, berita turnamen, dan galeri foto inspiratif agar semakin banyak
+        orang mencintai olahraga ini. Kami percaya sepak bola bukan hanya olahraga, tetapi gaya hidup sehat dan semangat kebersamaan!
+      </p>
+    </div>
+  </section>
+
+  <section id="tips" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold blue-gradient mb-10 text-center">Tips & Trik Dasar Sepak Bola</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Teknik Menggiring Bola (Dribbling)</h3>
+          <p class="text-gray-600 mb-4">Pelajari teknik menggiring bola yang efektif untuk melewati lawan.</p>
+          <div class="text-gray-700">
+            <p class="mb-2"><strong>Dribbling dengan Kaki Bagian Dalam:</strong> Kontrol bola lebih baik, cocok untuk situasi ketat.</p>
+            <p class="mb-2"><strong>Dribbling dengan Kaki Bagian Luar:</strong> Untuk perubahan arah yang cepat dan tak terduga.</p>
+            <p class="mb-2"><strong>Dribbling dengan Punggung Kaki:</strong> Untuk kecepatan tinggi di ruang terbuka.</p>
+            <p><strong>Tips:</strong> Jaga bola tetap dekat dengan kaki, lihat sekeliling bukan hanya ke bola, latih dengan kedua kaki.</p>
+          </div>
+        </article>
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Teknik Passing</h3>
+          <p class="text-gray-600 mb-4">Mengoper bola dengan akurat adalah kunci permainan tim yang baik.</p>
+          <div class="text-gray-700">
+            <p class="mb-2"><strong>Passing Pendek:</strong> Gunakan kaki bagian dalam untuk akurasi maksimal.</p>
+            <p class="mb-2"><strong>Passing Panjang:</strong> Gunakan punggung kaki dengan kekuatan lebih.</p>
+            <p class="mb-2"><strong>One-Two Pass:</strong> Oper dan langsung berlari ke posisi baru untuk menerima bola kembali.</p>
+            <p><strong>Tips:</strong> Perhatikan posisi rekan, oper ke depan kaki penerima, komunikasi dengan rekan tim.</p>
+          </div>
+        </article>
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Teknik Menembak (Shooting)</h3>
+          <p class="text-gray-600 mb-4">Kuasi teknik menembak untuk mencetak gol yang mematikan.</p>
+          <div class="text-gray-700">
+            <p class="mb-2"><strong>Shooting dengan Kaki Bagian Dalam:</strong> Untuk akurasi tinggi dari jarak menengah.</p>
+            <p class="mb-2"><strong>Shooting dengan Punggung Kaki:</strong> Untuk kekuatan dan kecepatan maksimal.</p>
+            <p class="mb-2"><strong>Volley Shot:</strong> Menembak bola sebelum menyentuh tanah.</p>
+            <p><strong>Tips:</strong> Fokus pada target, jaga keseimbangan tubuh, ikuti gerakan setelah menendang.</p>
+          </div>
+        </article>
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Teknik Bertahan</h3>
+          <p class="text-gray-600 mb-4">Pertahanan yang solid adalah fondasi tim yang sukses.</p>
+          <div class="text-gray-700">
+            <p class="mb-2"><strong>Jockeying:</strong> Menjaga jarak dengan pemain lawan sambil menunggu timing tackle yang tepat.</p>
+            <p class="mb-2"><strong>Tackling:</strong> Merebut bola dari lawan dengan timing yang tepat.</p>
+            <p class="mb-2"><strong>Blocking:</strong> Menghalangi tembakan atau umpan lawan.</p>
+            <p><strong>Tips:</strong> Tetap rendah, fokus pada bola bukan gerakan tubuh lawan, jangan terburu-buru tackle.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="peralatan" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold blue-gradient mb-10 text-center">Peralatan Sepak Bola</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">⚽ Sepak Bola</h3>
+          <p class="text-gray-700">Bola sepak modern memiliki karakteristik khusus untuk performa terbaik:</p>
+          <ul class="list-disc ml-5 mt-2 text-gray-700">
+            <li>Ukuran: 5 untuk dewasa, 4 untuk remaja, 3 untuk anak-anak</li>
+            <li>Material: PU (Polyurethane) untuk daya tahan dan feel yang baik</li>
+            <li>Panel: 32 panel tradisional atau desain termal untuk aerodinamika lebih baik</li>
+            <li>Tekanan: 8-12 PSI tergantung kondisi lapangan dan preferensi</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">👟 Sepatu Bola (Boots)</h3>
+          <p class="text-gray-700">Sepatu khusus sepak bola tersedia dalam berbagai jenis:</p>
+          <ul class="list-disc ml-5 mt-2 text-gray-700">
+            <li>FG (Firm Ground): Untuk lapangan rumput kering dan padat</li>
+            <li>SG (Soft Ground): Untuk lapangan basah dengan studs yang dapat dilepas</li>
+            <li>AG (Artificial Ground): Untuk lapangan sintetis dengan banyak studs pendek</li>
+            <li>TF (Turf): Untuk lapangan rumput pendek atau keras dengan banyak studs kecil</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">🧦 Kaos Kaki & Pelindung Tulang Kering</h3>
+          <p class="text-gray-700">Aksesori penting untuk keselamatan dan kenyamanan:</p>
+          <ul class="list-disc ml-5 mt-2 text-gray-700">
+            <li>Kaos kaki sepak bola: Panjang hingga bawah lutut, material menyerap keringat</li>
+            <li>Pelindung tulang kering: Wajib untuk melindungi dari benturan</li>
+            <li>Grip socks: Kaos kaki dengan grip di sol untuk stabilitas lebih baik</li>
+            <li>Kompresi socks: Untuk pemulihan setelah latihan atau pertandingan</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">🥅 Sarung Tangan Kiper & Jersey</h3>
+          <p class="text-gray-700">Peralatan khusus untuk kiper dan seragam tim:</p>
+          <ul class="list-disc ml-5 mt-2 text-gray-700">
+            <li>Sarung tangan kiper: Dengan grip latex untuk menangkap bola lebih baik</li>
+            <li>Jersey: Material breathable dengan teknologi moisture-wicking</li>
+            <li>Celana pendek: Ringan dan fleksibel untuk gerakan maksimal</li>
+            <li>Accessories lain: Training cone, goal portabel, pump bola, tas olahraga</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="berita" class="py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold blue-gradient mb-10 text-center">Berita Sepak Bola</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Timnas Indonesia Lolos ke Piala Asia 2024</h3>
+          <p class="text-gray-600 mb-2">15 Juni 2024</p>
+          <p class="text-gray-700">Timnas Indonesia berhasil lolos ke Piala Asia 2024 setelah mengalahkan Nepal dengan skor 2-0. Kemenangan ini menjadi sejarah penting setelah absen selama 16 tahun dari turnamen bergengsi Asia tersebut.</p>
+          <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold">Baca selengkapnya →</a>
+        </article>
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Persib Juara Liga 1 2024</h3>
+          <p class="text-gray-600 mb-2">18 Maret 2024</p>
+          <p class="text-gray-700">Persib Bandung berhasil merebut gelar juara Liga 1 2024 setelah mengalahkan Persija Jakarta dengan skor 3-1 di partai final. Ini menjadi gelar ketiga bagi Persib dalam sepuluh tahun terakhir.</p>
+          <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold">Baca selengkapnya →</a>
+        </article>
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">Wonderkid Indonesia Tandatangani Kontrak dengan Klub Eropa</h3>
+          <p class="text-gray-600 mb-2">1 Juli 2024</p>
+          <p class="text-gray-700">Pemain muda berbakat Indonesia, Marselino Ferdinan, resmi menandatangani kontrak dengan klub Belgia, KMSK Deinze. Ini menjadi langkah penting bagi pemain Indonesia di kancah Eropa.</p>
+          <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold">Baca selengkapnya →</a>
+        </article>
+        <article class="bg-white p-6 rounded-xl shadow">
+          <h3 class="text-2xl font-bold mb-3">PSSI Umumkan Skuad Timnas U-23 untuk Kualifikasi Piala Asia</h3>
+          <p class="text-gray-600 mb-2">25 Juni 2024</p>
+          <p class="text-gray-700">PSSI telah mengumumkan 23 pemain yang akan memperkuat Timnas U-23 Indonesia dalam kualifikasi Piala Asia U-23. Mereka akan menjalani pemusatan latihan di Jakarta sebelum berangkat ke Tajikistan.</p>
+          <a href="#" class="inline-block mt-4 text-blue-600 hover:text-blue-800 font-semibold">Baca selengkapnya →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sejarah" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold blue-gradient mb-10 text-center">Sejarah Sepak Bola</h2>
+      
+      <div class="mb-16">
+        <h3 class="text-3xl font-bold text-center mb-8 blue-gradient">Sejarah Sepak Bola Dunia</h3>
+        <div class="bg-white p-8 rounded-xl shadow">
+          <p class="text-gray-700 mb-4">
+            Sepak bola adalah olahraga paling populer di dunia dengan sejarah yang panjang dan kaya. Akar permainan ini dapat ditelusuri kembali ke peradaban kuno di berbagai belahan dunia.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">Abad ke-2 & 3 SM</h4>
+                <p class="text-gray-700">Permainan serupa sepak bola dimainkan di Tiongkok dengan nama "Cuju". Permainan ini melibatkan menendang bola kulit melalui lubang di jaring.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">Abad ke-19</h4>
+                <p class="text-gray-700">Sepak bola modern mulai berkembang di Inggris dengan aturan yang distandarisasi. Sekolah-sekolah dan universitas memainkan peran penting dalam pengembangannya.</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">1863</h4>
+                <p class="text-gray-700">Football Association (FA) didirikan di Inggris, menetapkan aturan resmi pertama yang memisahkan sepak bola dari rugby.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">1904</h4>
+                <p class="text-gray-700">Fédération Internationale de Football Association (FIFA) didirikan di Paris dengan 7 negara anggota: Prancis, Belgia, Denmark, Belanda, Spanyol, Swedia, dan Swiss.</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">1930</h4>
+                <p class="text-gray-700">Piala Dunia FIFA pertama diselenggarakan di Uruguay, menjadi turnamen sepak bola internasional terbesar pertama.</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">1954</h4>
+                <p class="text-gray-700">UEFA didirikan, menjadi badan pengatur sepak bola Eropa yang mengorganisir kompetisi seperti Liga Champions dan Euro.</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-content">
+                <h4 class="font-bold text-lg mb-2">1970</h4>
+                <p class="text-gray-700">Kartu kuning dan merah diperkenalkan di Piala Dunia, memberikan sistem disiplin yang lebih jelas dalam sepak bola.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-3xl font-bold text-center mb-8 blue-gradient">Sejarah Sepak Bola Indonesia</h3>
+        <div class="bg-white p-8 rounded-xl shadow">
+          <p class="text-gray-700 mb-4">
+            Sepak bola di Indonesia memiliki sejarah panjang sejak masa kolonial Belanda dan telah menjadi olahraga paling populer di negara ini.
+          </p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-lg mb-2">1930</h4>
+                <p class="text-gray-700">Persatuan Sepak Bola Seluruh Indonesia (PSSI) didirikan pada tanggal 19 April 1930 di Yogyakarta.</p>
+              </div>
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-lg mb-2">1938</h4>
+                <p class="text-gray-700">Timnas Indonesia (Hindia Belanda) pertama kali tampil di Piala Dunia di Prancis, menjadi tim Asia pertama di Piala Dunia.</p>
+              </div>
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-lg mb-2">1950-an</h4>
+                <p class="text-gray-700">Era keemasan sepak bola Indonesia dengan pemain legendaris seperti Ramang, Maulwi Saelan, dan Djamiat Dalhar.</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-lg mb-2">1970-an</h4>
+                <p class="text-gray-700">Indonesia meraih medali emas di SEA Games 1977 dan 1979, menunjukkan dominasi di kawasan Asia Tenggara.</p>
+              </div>
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-lg mb-2">2007</h4>
+                <p class="text-gray-700">Indonesia menjadi tuan rumah Piala Asia bersama Malaysia, Thailand, dan Vietnam.</p>
+              </div>
+              <div class="p-4 bg-blue-50 rounded-lg">
+                <h4 class="font-bold text-lg mb-2">Sekarang</h4>
+                <p class="text-gray-700">Sepak bola Indonesia terus berkembang dengan lahirnya talenta-talenta muda seperti Egy Maulana Vikri dan Witan Sulaeman.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak" class="py-20">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold blue-gradient mb-6">Kontak</h2>
+      <p class="text-gray-600 mb-8">Punya saran, pertanyaan, atau ingin bekerja sama? Kirim pesan Anda melalui formulir berikut.</p>
+      <form class="max-w-xl mx-auto space-y-4">
+        <input type="text" placeholder="Nama Anda" class="w-full px-4 py-3 border rounded-lg">
+        <input type="email" placeholder="Email" class="w-full px-4 py-3 border rounded-lg">
+        <textarea rows="4" placeholder="Pesan" class="w-full px-4 py-3 border rounded-lg"></textarea>
+        <button class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Kirim Pesan</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-white py-10 text-center">
+    <p class="text-gray-400">© 2024 Goal Zone. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
